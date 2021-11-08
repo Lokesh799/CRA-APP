@@ -6,7 +6,7 @@ export default function Todo() {
   const [post, setPost] = React.useState([]);
 
     useEffect(() => {
-      axios.get("http://localhost:3004/posts").then((response) => {
+      axios.get("http://localhost:8000/posts").then((response) => {
         console.log(response)
         setPost(response.data);
     });

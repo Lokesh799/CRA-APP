@@ -5,7 +5,7 @@ export default function Comment() {
   const [post, setPost] = React.useState([]);
 
     useEffect(() => {
-      axios.get("http://localhost:3004/comments").then((response) => {
+      axios.get("http://localhost:8000/comments").then((response) => {
         console.log(response)
         setPost(response.data);
     });

@@ -8,7 +8,7 @@ export default function User() {
   const [post, setPost] = React.useState([]);
 
     useEffect(() => {
-      axios.get("http://localhost:3004/users").then((response) => {
+      axios.get("http://localhost:8000/users").then((response) => {
         console.log(response)
         setPost(response.data);
     });
@@ -53,7 +53,6 @@ export default function User() {
          </div>
          <div>
            <ViewPost/>
-           {/* <CreateUser/> */}
          </div>
      </div>
     </>

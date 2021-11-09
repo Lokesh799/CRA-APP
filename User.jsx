@@ -1,7 +1,6 @@
 
 import axios from "axios";
 import React, { useEffect, } from "react";
-//import CreateUser from "./CreateUser";
 import ViewPost from "./ViewPost";
 
 export default function User() {
@@ -21,39 +20,19 @@ export default function User() {
       <div className ="d-flex flex-row bd-highlight mb-3">
         <div>
           <ul>
-            <h5 className ="text-danger">ID</h5>
-              {post.map(post =>(
-                <li key={post.id}>{post.id}</li>
-        ))}
-          </ul>
-        </div>
-        <div>
-          <ul>
-            <h5 className ="text-danger">Name</h5>
-              {post.map(post =>(
-                <li key={post.id}>{post.name}</li>
-        ))}
-         </ul>
-        </div>
-        <div>
-          <ul>
+          <div>
             <h5 className ="text-danger">UserName</h5>
               {post.map(post =>(
-                <li key={post.id}>{post.username}</li>
+                <li key={post.id}>{post.username}<button className="btn btn-primary" onClick>View post</button>
+                <button className="btn btn-primary mr-2" to="/ViewPost/${userId}">View Todo</button>
+                <button className="btn btn-primary mr-2" onClick>View Comment</button>
+                <button className="btn btn-primary mr-2" onClick> Edit</button>
+                </li>
+                
         ))}
+        </div>
           </ul>
         </div>
-        <div>
-          <ul>
-            <h5 className ="text-danger">Email</h5>
-              {post.map(post =>(
-                <li key={post.id}>{post.email}</li>
-        ))}
-          </ul>
-         </div>
-         <div>
-           <ViewPost/>
-         </div>
      </div>
     </>
   );

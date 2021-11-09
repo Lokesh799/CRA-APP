@@ -1,32 +1,24 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 
 export default function CreateUser ()   {
-    const url="http://localhost:8000/users"
+    let history=useHistory();
     const[data ,setData] =useState({
       id:"",
       username:"",
       email:""
 
     })
-     function submit(e) {
+     const submit=(e)=> {
        e.prevenDefault();
-       axios.post(url,{
-        id: data.id,
-        username: data.username,
-        email:data.email,
-       })
-       .then(res=>{
-         console.log(res.data)
-       })
+       axios.get("http://localhost:8000/users",data)
+       history.push("/User")
      }
      
 
-    function handle(e) {
-      const newData={...data}
-       newData[e.target.name]=e.target.value
-       setData(newData)
-       console.log(newData);
+    const handle =(e)=> {
+      setData({...data,[e.target.name]: e.target.value})
     }
     
   

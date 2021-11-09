@@ -1,18 +1,16 @@
 
-import { useHistory } from 'react-router-dom';
+import React from "react";
+import axios from "axios";
 
-function ViewPost() {
-  let history = useHistory();
-
-  const redirect = () => {
-    history.push('/post')
-  }
-
+const ViewPost=()=>{
   return (
     <div>
-      <button onClick={redirect}>View post</button>
+      <h1>helo</h1>
     </div>
   )
 }
-export default ViewPost
+
   
+
+export default ViewPost
+    
